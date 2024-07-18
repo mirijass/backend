@@ -1,0 +1,54 @@
+###
+GET http://localhost:4000/carreras
+
+### Consutar todas las mascotas
+GET http://localhost:4000/carreras
+
+### Consultar 1 mascota por id
+GET http://localhost:4000/carreras/2
+
+
+
+
+
+
+### Enviar un saludo
+GET http://localhost:4000/categorias/saludo
+
+### Consultar una categoria por su id
+GET http://localhost:4000/categorias/1
+
+### Consultar todos los empleados
+GET http://localhost:4000/categorias
+
+### Insertar el registro de un empleado
+POST http://localhost:4000/categorias
+Content-Type: application/json
+
+
+### Editar un empleado
+PUT http://localhost:4000/categorias/1
+Content-Type: application/json
+
+
+
+### Enviar un saludo
+GET http://localhost:4000/usuarios/saludo
+
+### Consultar un empleado por su id
+GET http://localhost:4000/usuarios/1
+
+### Consultar todos los empleados
+GET http://localhost:4000/usuarios
+
+### Insertar el registro de un empleado
+POST http://localhost:4000/usuarios
+Content-Type: application/json
+
+
+###Eliminar un empleado (Create Read Update Delete)
+DELETE http://localhost:4000/usuarios/2
+
+### Editar un empleado
+PUT http://localhost:4000/usuarios/1
+Content-Type: application/json

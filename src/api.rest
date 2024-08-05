@@ -55,6 +55,31 @@ Content-Type: application/json
 
 
 
+### Enviar un lugar
+GET http://localhost:4000/lugares/saludo
+
+### Consultar un lugar por su id
+GET http://localhost:4000/lugares/1
+
+### Consultar todos los lugar
+GET http://localhost:4000/lugares
+
+### Insertar el registro de un lugar
+POST http://localhost:4000/lugares
+Content-Type: application/json
+
+
+###Eliminar un lugar (Create Read Update Delete)
+DELETE http://localhost:4000/lugares/2
+
+### Editar un lugar
+PUT http://localhost:4000/lugares/1
+Content-Type: application/json
+
+
+
+
+
 
 ### Enviar un saludo
 GET http://localhost:4000/comentarios/saludo

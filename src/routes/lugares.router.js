@@ -4,7 +4,6 @@ const router= Router();
 
 const lugaresCtrl= require('../controllers/lugares.controller');
 
-router.get('/lugares/saludo',(req,res)=>res.send('holaaaaaaa'));
 
 router.get('/lugares/:id', lugaresCtrl.getLugares);
 

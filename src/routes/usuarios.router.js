@@ -4,7 +4,6 @@ const router= Router();
 
 const usuariosCtrl= require('../controllers/usuarios.controller');
 
-router.get('/usuarios/saludo',(req,res)=>res.send('holaaaaaaa'));
 
 router.get('/usuarios/:id', usuariosCtrl.getUsuario);
 

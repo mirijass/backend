@@ -10,5 +10,12 @@ router.get('/carreras/:id', carrerasCtrl.getCarrera);
 
 router.get('/carreras', carrerasCtrl.get);
 
+router.post('/carreras', carrerasCtrl.createCarrera);
+
+router.delete('/carreras/:id', carrerasCtrl.deleteCarrera);
+
+router.put('/carreras/:id', carrerasCtrl.editCarrera);
+
+
 
 module.exports= router;

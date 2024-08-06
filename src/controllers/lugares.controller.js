@@ -1,6 +1,6 @@
 const lugarCtrl={};
 
-//Consulta un empleado por su ID 
+
 lugarCtrl.getLugar= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
@@ -13,7 +13,7 @@ lugarCtrl.getLugar= (req, res) => {
     })
 }
 
-//Consulta todos los empleados
+
 lugarCtrl.getLugar= (req, res) => {
     req.getConnection((err, conn) =>{
         conn.query('SELECT * FROM lugar', (err, rows) => {

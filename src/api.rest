@@ -1,19 +1,27 @@
 ###
 GET http://localhost:4000/carreras
 
-### Consutar todas las mascotas
-GET http://localhost:4000/carreras
-
 ### Consultar 1 mascota por id
 GET http://localhost:4000/carreras/2
 
+### Insertar el registro de un empleado
+POST http://localhost:4000/localhost:4000/carreras
+Content-Type: application/json
+
+### Editar una carrera
+PUT http://localhost:4000/carreras/1
+Content-Type: application/json
+
+###Eliminar una carrera (Create Read Update Delete)
+DELETE http://localhost:4000/carreras/2
 
 
 
 
 
-### Enviar un saludo
-GET http://localhost:4000/categorias/saludo
+
+
+
 
 ### Consultar una categoria por su id
 GET http://localhost:4000/categorias/1
@@ -25,15 +33,16 @@ GET http://localhost:4000/categorias
 POST http://localhost:4000/categorias
 Content-Type: application/json
 
-
 ### Editar un empleado
 PUT http://localhost:4000/categorias/1
 Content-Type: application/json
 
+###Eliminar una carrera (Create Read Update Delete)
+DELETE http://localhost:4000/categorias/2
 
 
-### Enviar un saludo
-GET http://localhost:4000/usuarios/saludo
+
+
 
 ### Consultar un empleado por su id
 GET http://localhost:4000/usuarios/1
@@ -45,7 +54,6 @@ GET http://localhost:4000/usuarios
 POST http://localhost:4000/usuarios
 Content-Type: application/json
 
-
 ###Eliminar un empleado (Create Read Update Delete)
 DELETE http://localhost:4000/usuarios/2
 
@@ -55,8 +63,8 @@ Content-Type: application/json
 
 
 
-### Enviar un lugar
-GET http://localhost:4000/lugares/saludo
+
+
 
 ### Consultar un lugar por su id
 GET http://localhost:4000/lugares/1
@@ -67,7 +75,6 @@ GET http://localhost:4000/lugares
 ### Insertar el registro de un lugar
 POST http://localhost:4000/lugares
 Content-Type: application/json
-
 
 ###Eliminar un lugar (Create Read Update Delete)
 DELETE http://localhost:4000/lugares/2
@@ -81,24 +88,20 @@ Content-Type: application/json
 
 
 
-### Enviar un saludo
-GET http://localhost:4000/comentarios/saludo
-
-### Consultar un empleado por su id
+### Consultar un comentario por su id
 GET http://localhost:4000/comentarios/1
 
-### Consultar todos los empleados
+### Consultar todos los comentarios
 GET http://localhost:4000/comentarios
 
-### Insertar el registro de un empleado
+### Insertar el registro de un comentario
 POST http://localhost:4000/comentarios
 Content-Type: application/json
 
-
-###Eliminar un empleado (Create Read Update Delete)
+###Eliminar un comentario (Create Read Update Delete)
 DELETE http://localhost:4000/comnetarios/2
 
-### Editar un empleado
+### Editar un comentario
 PUT http://localhost:4000/comentarios/1
 Content-Type: application/json
 

@@ -34,6 +34,16 @@ categoriasCtrl.createCategoria= (req, res) => {
 }
 
 
+categoriasCtrl.deleteCategorias= (req, res) => {
+    const {id} = req.params;
+    req.getConnection((err, conn) =>{
+        conn.query('DELETE FROM categorias WHERE id = ?',[id], (err, rows) => {
+            res.json(rows);
+        })
+    })
+}
+
+
 
 categoriasCtrl.editCategoria= (req, res) => {
     const data = req.body;

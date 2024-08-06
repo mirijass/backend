@@ -4,7 +4,6 @@ const router= Router();
 
 const categoriasCtrl= require('../controllers/categorias.controller');
 
-router.get('/categorias/hello',(req,res)=>res.send('hola!!'));
 
 router.get('/categorias/:id', categoriasCtrl.getCategoria);
 

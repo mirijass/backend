@@ -28,6 +28,7 @@ categoriasCtrl.createCategoria= (req, res) => {
     console.log(data);
     req.getConnection((err, conn) =>{
         conn.query('INSERT INTO categorias SET ?',[data], (err, categoria) => {
+            res.json(categoria);
         })
 
     })

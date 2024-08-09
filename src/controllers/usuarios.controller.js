@@ -16,11 +16,17 @@ usuariosCtrl.getUsuario= (req, res) => {
 
 
 usuariosCtrl.createLogin= (req, res) => {
-    const {email, contrasena} = req.params;
-    req.createConnection((err, conn) =>{
-        conn.query('SELECT * FROM usuarios WHERE email = ? AND contrasena = ?',[loginUsuario], (err, rows) => {
+    const data = req.body;
+    console.log(data);
+    req.getConnection((err, conn) =>{
+        conn.query('SELECT * FROM usuarios WHERE email = ? AND contrasena = ?',[data.email, data.contrasena], (err, rows) => {
+            console.log(rows);
+
             if(err){
                 console.log(err);
+            }
+            if(rows.length==0){
+                res.status(404);
             }
             res.json(rows[0]);
         })

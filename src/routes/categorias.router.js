@@ -9,7 +9,7 @@ router.get('/categorias/:id', categoriasCtrl.getCategoria);
 
 router.get('/categorias', categoriasCtrl.getCategorias);
 
-router.post('categorias', categoriasCtrl.createCategoria);
+router.post('/categorias', categoriasCtrl.createCategoria);
 
 router.delete('/categorias/:id', categoriasCtrl.deleteCategorias);
 

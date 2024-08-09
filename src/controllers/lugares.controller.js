@@ -4,7 +4,7 @@ const lugarCtrl={};
 lugarCtrl.getLugar= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM lugar WHERE id = ?',[id], (err, rows) => {
+        conn.query('SELECT * FROM lugares WHERE id_lugar = ?',[id], (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -14,9 +14,9 @@ lugarCtrl.getLugar= (req, res) => {
 }
 
 
-lugarCtrl.getLugar= (req, res) => {
+lugarCtrl.getLugares= (req, res) => {
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM lugar', (err, rows) => {
+        conn.query('SELECT * FROM lugares', (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -29,7 +29,7 @@ lugarCtrl.createLugar= (req, res) => {
     const data = req.body;
     console.log(data);
     req.getConnection((err, conn) =>{
-        conn.query('INSERT INTO lugar SET ?',[data], (err, lugar) => {
+        conn.query('INSERT INTO lugares SET ?',[data], (err, lugar) => {
             res.redirect('/lugar');
         })
     })
@@ -38,7 +38,7 @@ lugarCtrl.createLugar= (req, res) => {
 lugarCtrl.deleteLugar= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('DELETE FROM lugar WHERE id = ?',[id], (err, rows) => {
+        conn.query('DELETE FROM lugares WHERE id_lugar = ?',[id], (err, rows) => {
             res.json(rows);
         })
     })

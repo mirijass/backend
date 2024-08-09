@@ -3,7 +3,7 @@ const  comentariosCtrl={};
 comentariosCtrl.getComentario= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM comentario WHERE id = ?',[id], (err, rows) => {
+        conn.query('SELECT * FROM comentarios WHERE id_comentario = ?',[id], (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -14,7 +14,7 @@ comentariosCtrl.getComentario= (req, res) => {
 
 comentariosCtrl.getComentarios= (req, res) => {
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM comentario', (err, rows) => {
+        conn.query('SELECT * FROM comentarios', (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -27,7 +27,11 @@ comentariosCtrl.createComentario= (req, res) => {
     const data = req.body;
     console.log(data);
     req.getConnection((err, conn) =>{
-        conn.query('INSERT INTO comentario SET ?',[data], (err, comentario) => {
+        conn.query('INSERT INTO comentarios SET ?',[data], (err, comentario) => {
+            if(err){
+                console.log(err);
+            }
+            res.json(comentario);
         })
 
     })
@@ -35,7 +39,7 @@ comentariosCtrl.createComentario= (req, res) => {
 comentariosCtrl.deleteComentario= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('DELETE FROM comentario WHERE id = ?',[id], (err, rows) => {
+        conn.query('DELETE FROM comentarios WHERE id_comentario = ?',[id], (err, rows) => {
             res.json(rows);
         })
     })
@@ -48,8 +52,13 @@ comentariosCtrl.editComentario= (req, res) => {
     const {id}= req.params;
     console.log(data);
     req.getConnection((err, conn) =>{
-        conn.query('UPDATE comentario SET ? WHERE id = ?',[data, id], (err, comentario) => {
+        conn.query('UPDATE comentarios SET ? WHERE id_comentario = ?',[data, id], (err, comentario) => {
+            if(err){
+                console.log(err);
+            }
             this.getComentarios
+
+            res.json(comentario);
         })
     })
 }

@@ -2,7 +2,7 @@
 GET http://localhost:4000/carreras
 
 ### Consultar 1 mascota por id
-GET http://localhost:4000/carreras/2
+GET http://localhost:4000/carreras/1
 
 ### Insertar el registro de un empleado
 POST http://localhost:4000/localhost:4000/carreras

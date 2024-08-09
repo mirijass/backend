@@ -4,7 +4,7 @@ const usuariosCtrl={};
 usuariosCtrl.getUsuario= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM usuario WHERE id = ?',[id], (err, rows) => {
+        conn.query('SELECT * FROM usuarios WHERE id_usuario = ?',[id], (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -16,7 +16,7 @@ usuariosCtrl.getUsuario= (req, res) => {
 //Consulta todos los empleados
 usuariosCtrl.getUsuarios= (req, res) => {
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM usuario', (err, rows) => {
+        conn.query('SELECT * FROM usuarios', (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -29,7 +29,7 @@ usuariosCtrl.createUsuario= (req, res) => {
     const data = req.body;
     console.log(data);
     req.getConnection((err, conn) =>{
-        conn.query('INSERT INTO usuario SET ?',[data], (err, usuario) => {
+        conn.query('INSERT INTO usuarios SET ?',[data], (err, usuario) => {
             res.redirect('/usuarios');
         })
     })
@@ -38,7 +38,7 @@ usuariosCtrl.createUsuario= (req, res) => {
 usuariosCtrl.deleteUsuario= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('DELETE FROM usuario WHERE id = ?',[id], (err, rows) => {
+        conn.query('DELETE FROM usuarios WHERE id_usuario = ?',[id], (err, rows) => {
             res.json(rows);
         })
     })
@@ -51,7 +51,7 @@ usuariosCtrl.editUsuario= (req, res) => {
     const {id}= req.params;
     console.log(data);
     req.getConnection((err, conn) =>{
-        conn.query('UPDATE usuario SET ? WHERE id = ?',[data, id], (err, usuario) => {
+        conn.query('UPDATE usuarios SET ? WHERE id_usuario = ?',[data, id], (err, usuario) => {
             this.getEmpleados
         })
     })

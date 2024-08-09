@@ -5,14 +5,14 @@ const router= Router();
 const lugaresCtrl= require('../controllers/lugares.controller');
 
 
-router.get('/lugares/:id', lugaresCtrl.getLugares);
+router.get('/lugares/:id', lugaresCtrl.getLugar);
 
 router.get('/lugares', lugaresCtrl.getLugares);
 
-router.post('/lugares', usuariosCtrl.createLugares);
+router.post('/lugares', lugaresCtrl.createLugar);
 
-router.delete('/lugares/:id', lugaresCtrl.deleteLugares);
+router.delete('/lugares/:id', lugaresCtrl.deleteLugar);
 
-router.put('/lugares/:id', lugaresCtrl.editLugares);
+router.put('/lugares/:id', lugaresCtrl.editLugar);
 
 module.exports= router;

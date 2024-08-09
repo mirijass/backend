@@ -9,7 +9,7 @@ const comentariosCtrl = require('../controllers/comentarios.controller');
 
 router.get('/comentarios/:id', comentariosCtrl.getComentario);
 
-router.get('/comentarios', comentariosCtrl.getComentario);
+router.get('/comentarios', comentariosCtrl.getComentarios);
 
 router.post('/comentarios', comentariosCtrl.createComentario);
 

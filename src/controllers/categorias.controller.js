@@ -3,7 +3,7 @@ const  categoriasCtrl={};
 categoriasCtrl.getCategoria= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM categoria WHERE id = ?',[id], (err, rows) => {
+        conn.query('SELECT * FROM categorias WHERE id_categoria = ?',[id], (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -14,7 +14,7 @@ categoriasCtrl.getCategoria= (req, res) => {
 
 categoriasCtrl.getCategorias= (req, res) => {
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM categoria', (err, rows) => {
+        conn.query('SELECT * FROM categorias', (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -27,7 +27,7 @@ categoriasCtrl.createCategoria= (req, res) => {
     const data = req.body;
     console.log(data);
     req.getConnection((err, conn) =>{
-        conn.query('INSERT INTO categoria SET ?',[data], (err, categoria) => {
+        conn.query('INSERT INTO categorias SET ?',[data], (err, categoria) => {
         })
 
     })
@@ -37,7 +37,7 @@ categoriasCtrl.createCategoria= (req, res) => {
 categoriasCtrl.deleteCategorias= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('DELETE FROM categorias WHERE id = ?',[id], (err, rows) => {
+        conn.query('DELETE FROM categorias WHERE id_categoria = ?',[id], (err, rows) => {
             res.json(rows);
         })
     })
@@ -50,7 +50,7 @@ categoriasCtrl.editCategoria= (req, res) => {
     const {id}= req.params;
     console.log(data);
     req.getConnection((err, conn) =>{
-        conn.query('UPDATE categoria SET ? WHERE id = ?',[data, id], (err, categoria) => {
+        conn.query('UPDATE categorias SET ? WHERE id_categoria = ?',[data, id], (err, categoria) => {
             this.getCategorias
         })
     })

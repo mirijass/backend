@@ -13,6 +13,22 @@ usuariosCtrl.getUsuario= (req, res) => {
     })
 }
 
+
+
+usuariosCtrl.createLogin= (req, res) => {
+    const {email, contrasena} = req.params;
+    req.createConnection((err, conn) =>{
+        conn.query('SELECT * FROM usuarios WHERE email = ? AND contrasena = ?',[loginUsuario], (err, rows) => {
+            if(err){
+                console.log(err);
+            }
+            res.json(rows[0]);
+        })
+    })
+}
+
+
+
 //Consulta todos los empleados
 usuariosCtrl.getUsuarios= (req, res) => {
     req.getConnection((err, conn) =>{

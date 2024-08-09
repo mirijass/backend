@@ -7,6 +7,8 @@ const usuariosCtrl= require('../controllers/usuarios.controller');
 
 router.get('/usuarios/:id', usuariosCtrl.getUsuario);
 
+router.post('/usuarios/:login', usuariosCtrl.createUsuario);
+
 router.get('/usuarios', usuariosCtrl.getUsuarios);
 
 router.post('/usuarios', usuariosCtrl.createUsuario);

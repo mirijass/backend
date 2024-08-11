@@ -33,8 +33,6 @@ categoriasCtrl.createCategoria= (req, res) => {
     })
 }
 
-
-
 categoriasCtrl.editCategoria= (req, res) => {
     const data = req.body;
     const {id}= req.params;
@@ -45,6 +43,16 @@ categoriasCtrl.editCategoria= (req, res) => {
         })
     })
 }
-
+categoriasCtrl.getCategoria= (req, res) => {
+    const {salud} = req.params;
+    req.getConnection((err, conn) =>{
+        conn.query('SELECT * FROM categoria WHERE salud = ?',[id], (err, rows) => {
+            if(err){
+                console.log(err);
+            }
+            res.json(rows[0]);
+        })
+    })
+}
 
 module.exports=categoriasCtrl;

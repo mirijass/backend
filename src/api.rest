@@ -1,14 +1,11 @@
 ###
 GET http://localhost:4000/carreras
 
-### Consutar todas las mascotas
+### Consutar todas las carreras
 GET http://localhost:4000/carreras
 
-### Consultar 1 mascota por id
+### Consultar una carrera por id
 GET http://localhost:4000/carreras/2
-
-
-
 
 
 
@@ -18,15 +15,50 @@ GET http://localhost:4000/categorias/saludo
 ### Consultar una categoria por su id
 GET http://localhost:4000/categorias/1
 
-### Consultar todos los empleados
+### Consultar todos las categorias
 GET http://localhost:4000/categorias
 
-### Insertar el registro de un empleado
+### Filtro de salud
+const categoria = 'salud';
+fetch(`http://localhost:4000/filtro?categoria=${categoria}`)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+  ### Filtro de renta
+  GET http://localhost:4000/categoria/lugar/renta
+  const categoria = 'renta';
+fetch(`http://localhost:4000/filtro?categoria=${categoria}`)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+  ### Filtro de comida
+  const categoria = 'comida';
+fetch(`http://localhost:4000/filtro?categoria=${categoria}`)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+  ### Filtro de transporte
+  const categoria = 'transporte';
+fetch(`http://localhost:4000/filtro?categoria=${categoria}`)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+  ### Filtro de espacios de recreación
+  const categoria = 'espaciosDeRecreacion';
+fetch(`http://localhost:4000/filtro?categoria=${categoria}`)
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+### Insertar el registro de una categoria
 POST http://localhost:4000/categorias
 Content-Type: application/json
 
-
-### Editar un empleado
+### Editar una categoria
 PUT http://localhost:4000/categorias/1
 Content-Type: application/json
 
@@ -35,39 +67,53 @@ Content-Type: application/json
 ### Enviar un saludo
 GET http://localhost:4000/usuarios/saludo
 
-### Consultar un empleado por su id
+### Consultar un usuario por su id
 GET http://localhost:4000/usuarios/1
 
-### Consultar todos los empleados
+### Consultar todos los usuarios
 GET http://localhost:4000/usuarios
 
-### Insertar el registro de un empleado
+### Insertar el registro de un usuario
 POST http://localhost:4000/usuarios
 Content-Type: application/json
 
-
-###Eliminar un empleado (Create Read Update Delete)
+###Eliminar un usuario (Create Read Update Delete)
 DELETE http://localhost:4000/usuarios/2
 
-### Editar un empleado
+### Editar un usuario
 PUT http://localhost:4000/usuarios/1
 Content-Type: application/json
 
 
 
-### Enviar un lugar
+### Enviar un saludo
 GET http://localhost:4000/lugares/saludo
 
 ### Consultar un lugar por su id
-GET http://localhost:4000/lugares/1
+GET http://localhost:4000/lugares/2
+
 
 ### Consultar todos los lugar
 GET http://localhost:4000/lugares
 
-### Insertar el registro de un lugar
+### Insertar el registro de un usuario
 POST http://localhost:4000/lugares
 Content-Type: application/json
 
+{
+  "id_lugar": 2,
+  "nombre_lugar": "la alameda",
+  "latutud":"210922",
+  "longuitud":"1005557",
+  "descripcion": "parque",
+  "calle":"av. norte",
+  "colonia":"fraccionamiento guanajuato",
+  "codigo_postal":37800,
+  "no_exterior":5,
+  "no_interior":0,
+  "telefono":"4181066901",
+  "id_categoria":2
+}
 
 ###Eliminar un lugar (Create Read Update Delete)
 DELETE http://localhost:4000/lugares/2
@@ -75,9 +121,6 @@ DELETE http://localhost:4000/lugares/2
 ### Editar un lugar
 PUT http://localhost:4000/lugares/1
 Content-Type: application/json
-
-
-
 
 
 
@@ -93,7 +136,6 @@ GET http://localhost:4000/comentarios
 ### Insertar el registro de un empleado
 POST http://localhost:4000/comentarios
 Content-Type: application/json
-
 
 ###Eliminar un empleado (Create Read Update Delete)
 DELETE http://localhost:4000/comnetarios/2

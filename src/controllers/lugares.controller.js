@@ -1,10 +1,15 @@
 const lugaresCtrl={};
 
+<<<<<<< HEAD
 //Consulta un empleado por su ID 
 lugaresCtrl.getLugares= (req, res) => {
+=======
+
+lugarCtrl.getLugar= (req, res) => {
+>>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM lugar WHERE id = ?',[id], (err, rows) => {
+        conn.query('SELECT * FROM lugares WHERE id_lugar = ?',[id], (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -13,10 +18,15 @@ lugaresCtrl.getLugares= (req, res) => {
     })
 }
 
+<<<<<<< HEAD
 //Consulta todos los empleados
 lugaresCtrl.getLugares= (req, res) => {
+=======
+
+lugarCtrl.getLugares= (req, res) => {
+>>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM lugar', (err, rows) => {
+        conn.query('SELECT * FROM lugares', (err, rows) => {
             if(err){
                 console.log(err);
             }
@@ -29,8 +39,13 @@ lugaresCtrl.createLugares= (req, res) => {
     const data = req.body;
     console.log(data);
     req.getConnection((err, conn) =>{
+<<<<<<< HEAD
         conn.query('INSERT INTO lugar SET ?',[data], (err, lugares) => {
             res.redirect('/lugares');
+=======
+        conn.query('INSERT INTO lugares SET ?',[data], (err, lugar) => {
+            res.redirect('/lugar');
+>>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
         })
     })
 }
@@ -38,7 +53,7 @@ lugaresCtrl.createLugares= (req, res) => {
 lugaresCtrl.deleteLugares= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
-        conn.query('DELETE FROM lugar WHERE id = ?',[id], (err, rows) => {
+        conn.query('DELETE FROM lugares WHERE id_lugar = ?',[id], (err, rows) => {
             res.json(rows);
         })
     })

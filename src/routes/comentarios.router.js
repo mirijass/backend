@@ -6,11 +6,10 @@ const comentariosCtrlsCtrl= require('../controllers/comentarios.controller');
 const usuariosCtrl = require('../controllers/usuarios.controller');
 const comentariosCtrl = require('../controllers/comentarios.controller');
 
-router.get('/comentarios/saludo',(req,res)=>res.send('holaaaaaaa'));
 
 router.get('/comentarios/:id', comentariosCtrl.getComentario);
 
-router.get('/comentarios', comentariosCtrl.getComentario);
+router.get('/comentarios', comentariosCtrl.getComentarios);
 
 router.post('/comentarios', comentariosCtrl.createComentario);
 

@@ -1,12 +1,7 @@
 const lugaresCtrl={};
 
-<<<<<<< HEAD
-//Consulta un empleado por su ID 
-lugaresCtrl.getLugares= (req, res) => {
-=======
 
-lugarCtrl.getLugar= (req, res) => {
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
+lugaresCtrl.getLugar= (req, res) => {
     const {id} = req.params;
     req.getConnection((err, conn) =>{
         conn.query('SELECT * FROM lugares WHERE id_lugar = ?',[id], (err, rows) => {
@@ -18,13 +13,8 @@ lugarCtrl.getLugar= (req, res) => {
     })
 }
 
-<<<<<<< HEAD
-//Consulta todos los empleados
-lugaresCtrl.getLugares= (req, res) => {
-=======
 
-lugarCtrl.getLugares= (req, res) => {
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
+lugaresCtrl.getLugares= (req, res) => {
     req.getConnection((err, conn) =>{
         conn.query('SELECT * FROM lugares', (err, rows) => {
             if(err){
@@ -39,13 +29,8 @@ lugaresCtrl.createLugares= (req, res) => {
     const data = req.body;
     console.log(data);
     req.getConnection((err, conn) =>{
-<<<<<<< HEAD
-        conn.query('INSERT INTO lugar SET ?',[data], (err, lugares) => {
-            res.redirect('/lugares');
-=======
         conn.query('INSERT INTO lugares SET ?',[data], (err, lugar) => {
-            res.redirect('/lugar');
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
+            res.json(lugar);
         })
     })
 }

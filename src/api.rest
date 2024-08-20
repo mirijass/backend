@@ -11,7 +11,6 @@ GET http://localhost:4000/carreras/2
 
 ### Enviar un saludo
 GET http://localhost:4000/categorias/saludo
-
 ### Consultar 1 mascota por id
 GET http://localhost:4000/carreras/1
 
@@ -80,9 +79,7 @@ fetch(`http://localhost:4000/filtro?categoria=${categoria}`)
 POST http://localhost:4000/categorias
 Content-Type: application/json
 
-
 ### Editar una categoria
-
 ### Editar un empleado
 PUT http://localhost:4000/categorias/1
 Content-Type: application/json
@@ -104,11 +101,8 @@ GET http://localhost:4000/usuarios
 POST http://localhost:4000/usuarios
 Content-Type: application/json
 
-<<<<<<< HEAD
 ###Eliminar un usuario (Create Read Update Delete)
-=======
 ###Eliminar un empleado (Create Read Update Delete)
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
 DELETE http://localhost:4000/usuarios/2
 
 ### Editar un usuario
@@ -117,13 +111,10 @@ Content-Type: application/json
 
 
 
-<<<<<<< HEAD
 ### Enviar un saludo
 GET http://localhost:4000/lugares/saludo
-=======
 
 
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
 
 ### Consultar un lugar por su id
 GET http://localhost:4000/lugares/2
@@ -136,12 +127,10 @@ GET http://localhost:4000/lugares
 POST http://localhost:4000/lugares
 Content-Type: application/json
 
-<<<<<<< HEAD
 {
-  "id_lugar": 2,
   "nombre_lugar": "la alameda",
-  "latutud":"210922",
-  "longuitud":"1005557",
+  "latitud":"210922",
+  "longitud":"1005557",
   "descripcion": "parque",
   "calle":"av. norte",
   "colonia":"fraccionamiento guanajuato",
@@ -152,8 +141,6 @@ Content-Type: application/json
   "id_categoria":2
 }
 
-=======
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
 ###Eliminar un lugar (Create Read Update Delete)
 DELETE http://localhost:4000/lugares/2
 
@@ -163,17 +150,14 @@ Content-Type: application/json
 
 
 
-<<<<<<< HEAD
 ### Enviar un saludo
 GET http://localhost:4000/comentarios/saludo
 
 ### Consultar un empleado por su id
-=======
 
 
 
 ### Consultar un comentario por su id
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
 GET http://localhost:4000/comentarios/1
 
 ### Consultar todos los comentarios
@@ -183,11 +167,8 @@ GET http://localhost:4000/comentarios
 POST http://localhost:4000/comentarios
 Content-Type: application/json
 
-<<<<<<< HEAD
 ###Eliminar un empleado (Create Read Update Delete)
-=======
 ###Eliminar un comentario (Create Read Update Delete)
-
 DELETE http://localhost:4000/comnetarios/2
 
 ### Editar un comentario

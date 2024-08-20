@@ -34,8 +34,6 @@ categoriasCtrl.createCategoria= (req, res) => {
     })
 }
 
-<<<<<<< HEAD
-=======
 
 categoriasCtrl.deleteCategorias= (req, res) => {
     const {id} = req.params;
@@ -48,7 +46,6 @@ categoriasCtrl.deleteCategorias= (req, res) => {
 
 
 
->>>>>>> 3be6d9c9480e2f9d086d0a1902f628cfdfeb0585
 categoriasCtrl.editCategoria= (req, res) => {
     const data = req.body;
     const {id}= req.params;

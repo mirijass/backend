@@ -7,7 +7,10 @@ const lugaresCtrl= require('../controllers/lugares.controller');
 
 router.get('/lugares/:id', lugaresCtrl.getLugar);
 
-router.get('/lugares', lugaresCtrl.getLugares);
+router.get('/lugares/get/entretenimiento', lugaresCtrl.getLugaresEntretenimiento);
+router.get('/lugares/get/comida', lugaresCtrl.getLugaresComida);
+router.get('/lugares/get/renta', lugaresCtrl.getLugaresRenta);
+router.get('/lugares/get/trasporte', lugaresCtrl.getLugaresTransporte);
 
 router.post('/lugares', lugaresCtrl.createLugares);
 

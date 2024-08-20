@@ -14,9 +14,39 @@ lugaresCtrl.getLugar= (req, res) => {
 }
 
 
-lugaresCtrl.getLugares= (req, res) => {
+lugaresCtrl.getLugaresRenta= (req, res) => {
     req.getConnection((err, conn) =>{
-        conn.query('SELECT * FROM lugares', (err, rows) => {
+        conn.query('SELECT * FROM lugares WHERE id_categoria= 4', (err, rows) => {
+            if(err){
+                console.log(err);
+            }
+            res.json(rows);
+        })
+    })
+}
+lugaresCtrl.getLugaresEntretenimiento= (req, res) => {
+    req.getConnection((err, conn) =>{
+        conn.query('SELECT * FROM lugares where id_categoria = 2', (err, rows) => {
+            if(err){
+                console.log(err);
+            }
+            res.json(rows);
+        })
+    })
+}
+lugaresCtrl.getLugaresComida= (req, res) => {
+    req.getConnection((err, conn) =>{
+        conn.query('SELECT * FROM lugares where id_categoria = 3', (err, rows) => {
+            if(err){
+                console.log(err);
+            }
+            res.json(rows);
+        })
+    })
+}
+lugaresCtrl.getLugaresTransporte= (req, res) => {
+    req.getConnection((err, conn) =>{
+        conn.query('SELECT * FROM lugares where id_categoria = 5', (err, rows) => {
             if(err){
                 console.log(err);
             }

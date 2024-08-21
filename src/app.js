@@ -1,6 +1,6 @@
 const express = require ('express'); 
 const morgan = require ('morgan');
-const mysql = require ('mysql');
+const mysql = require ('mysql2');
 const myConnection = require ('express-myconnection');
 
 const app = express();
@@ -15,11 +15,11 @@ app.use (cors());
 app.use (morgan('dev'));
 
 app.use(myConnection(mysql,{
-    host: 'localhost',
+    host: 'junction.proxy.rlwy.net',
     user: 'root',
-    password: '',
-    port: 3306,
-    database: 'aguilas_foraneas'  
+    password: 'AdfCxIhdrburrVGrEQWPuNcnoOTySEDA',
+    port: 21726,
+    database: 'railway'  
 }, 'single'));
 
 app.use (express.json());
